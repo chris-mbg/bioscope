@@ -1,9 +1,6 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import ListGroup from "react-bootstrap/ListGroup";
-import imgPrefixUrl from '../utilities/ImgPrefixUrl'
 import MovieCard from "./MovieCard";
 
 const MoviesWrapper = ({ movies }) => {

@@ -1,17 +1,21 @@
-import React from 'react'
+import React from "react";
 import Card from "react-bootstrap/Card";
-import Table from 'react-bootstrap/Table'
-import { Link } from 'react-router-dom';
-import imgPrefixUrl from '../utilities/ImgPrefixUrl'
+import Table from "react-bootstrap/Table";
+import { Link } from "react-router-dom";
+import imgPrefixUrl from "../utilities/ImgPrefixUrl";
 
 const MovieCard = ({ movie }) => {
-  return (
+  const renderCard = () => (
     <Card className="h-100 bg-light shadow">
       <Link to={`/movies/movie/${movie.id}`}>
-        <Card.Img variant="top" src={imgPrefixUrl + movie.backdrop_path} />
+        {movie.backdrop_path ? (
+          <Card.Img variant="top" src={imgPrefixUrl + movie.backdrop_path} />
+        ) : (
+          <NoImage type="movie" />
+        )}
         <Card.Body>
           <Card.Title>{movie.title}</Card.Title>
-          <hr className="my-1"/>
+          <hr className="my-1" />
           <Table className="m-0 table-borderless fs-6">
             <tbody>
               <tr>
@@ -28,6 +32,8 @@ const MovieCard = ({ movie }) => {
       </Link>
     </Card>
   );
-}
+
+  return movie ? renderCard() : null;
+};
 
 export default MovieCard;

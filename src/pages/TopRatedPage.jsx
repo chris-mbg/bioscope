@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from 'react-query'
 import { getTopRated } from '../services/TMDBAPI'
+import LoadError from "../components/LoadError";
 
 const TopRatedPage = () => {
 
@@ -9,8 +10,7 @@ const TopRatedPage = () => {
   return (
     <div>
       <h1>Top Rated Movies</h1>
-      {isLoading && <p>Loading...</p>}
-      {isError && <p>Error: {error.message}</p>}
+      <LoadError isLoading={isLoading} isError={isError} error={error} />
       {data && data.results.map(mov => (<p key={mov.id}>{mov.title}</p>))}
     </div>
   );

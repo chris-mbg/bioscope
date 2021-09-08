@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Pagination from "../components/Pagination";
 import { useUrlSearchParams } from "use-url-search-params";
 import MoviesWrapper from "../components/MoviesWrapper";
+import LoadError from "../components/LoadError";
 
 const GenrePage = () => {
   const { id: genreId } = useParams();
@@ -32,9 +33,9 @@ const GenrePage = () => {
   return (
     <>
       <h1 className="text-center">Find ... Movies</h1>
-      {isError && <p>Error: {error.message}</p>}
-      {isLoading && <p>Loading...</p>}
-  
+
+      <LoadError isLoading={isLoading} isError={isError} error={error} />
+
       <MoviesWrapper movies={data?.results} />
 
       <Pagination

@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 
 const Pagination = ({ page, setPage, isPrevData, hasMore }) => {
   return (
-    <Container>
+    <Container className="pb-3">
       <hr className="my-3" />
       <div className="d-flex justify-content-around align-items-center my-3">
         <Button
