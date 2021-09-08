@@ -6,7 +6,7 @@ const Pagination = ({ page, setPage, isPrevData, hasMore }) => {
   return (
     <Container>
       <hr className="my-3" />
-      <div className="d-flex justify-content-around">
+      <div className="d-flex justify-content-around align-items-center my-3">
         <Button
           variant="secondary"
           disabled={isPrevData || page === 1}
@@ -15,7 +15,7 @@ const Pagination = ({ page, setPage, isPrevData, hasMore }) => {
           &laquo; Previous
         </Button>
 
-        <span>Current page: {page} </span>
+        <span className="fw-bold">Current page: {page} </span>
 
         <Button
           variant="secondary"
