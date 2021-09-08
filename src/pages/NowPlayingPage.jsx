@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query'
-import { getNowPlaying, getPopular, testGet } from '../services/TMDBAPI'
+import { getNowPlaying } from '../services/TMDBAPI'
 
 const NowPlayingPage = () => {
 

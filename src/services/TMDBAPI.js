@@ -39,8 +39,8 @@ export const getTopRated = async () => {
 export const getAllGenres = async () => {
   return get("/genre/movie/list");
 };
-export const getMoviesForGenre = async (genreId) => {
-  return get('/discover/movie', { with_genres: genreId })
+export const getMoviesForGenre = async (genreId, page) => {
+  return get('/discover/movie', { with_genres: genreId, page: page })
 }
 
 export const getMovieById = async (movieId) => {
