@@ -1,1 +1,20 @@
 @import "bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Glory:wght@100;200;300;400;500;600;700&family=Monoton&display=swap");
+
+body {
+  font-family: "Glory";
+}
+
+.logo-text {
+  font-family: "Monoton";
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: tomato;
+}
