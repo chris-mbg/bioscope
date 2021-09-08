@@ -11,7 +11,7 @@ const apiKey = "ad4ffebe9c5cb2b228d5e1ab4c177669";
 axios.defaults.baseURL = "https://api.themoviedb.org/3";
 
 const get = async (endpoint, queryParams = null) => {
-  let queryString = "";
+  let queryString = "&adult=false";
   if (queryParams) {
     Object.keys(queryParams).forEach((key) => {
       queryString += `&${key}=${queryParams[key]}`;
@@ -48,3 +48,14 @@ export const getTopRated = async () => {
 export const getAllGenres = async () => {
   return get("/genre/movie/list");
 };
+export const getMoviesForGenre = async (genreId) => {
+  return get('/discover/movie', { with_genres: genreId })
+}
+
+export const getMovieById = async (movieId) => {
+  return get(`/movie/${movieId}`, { append_to_response: 'credits,similar'})
+}
+
+export const getActorById = async (actorId) => {
+  return get(`/person/${actorId}`, { append_to_response: 'movie_credits'})
+}
