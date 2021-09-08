@@ -4,6 +4,13 @@
 body {
   font-family: "Glory";
 }
+#root {
+  background: url('https://images.unsplash.com/photo-1502679726485-931beda67f88?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&w=1700&q=100');
+  // background: url('https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3057&q=100');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
 
 .logo-text {
   font-family: "Monoton";
