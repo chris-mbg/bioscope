@@ -5,8 +5,7 @@
  *
  */
 import axios from "axios";
-
-const apiKey = "ad4ffebe9c5cb2b228d5e1ab4c177669";
+import apiKey from '../utilities/APIKey'
 
 axios.defaults.baseURL = "https://api.themoviedb.org/3";
 
@@ -26,14 +25,6 @@ const get = async (endpoint, queryParams = null) => {
 
   return response.data;
 };
-
-export const testGet = async () =>
-  await get("/discover/movie", {
-    region: "SV",
-    ["release_date.gte"]: "2016-11-16",
-    ["release_date.lte"]: "2021-12-02",
-    ["with_release_type"]: "2|3",
-  });
 
 export const getNowPlaying = async () => {
   return get("/movie/now_playing", { region: "US" });
