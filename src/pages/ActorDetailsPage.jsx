@@ -3,6 +3,8 @@ import { useQuery } from "react-query";
 import { useParams, Link } from "react-router-dom";
 import { getActorById } from "../services/TMDBAPI";
 import LoadError from "../components/LoadError";
+import ActorDetailsHeader from "../components/ActorDetailsHeader";
+import ActorDetailsInfo from "../components/ActorDetailsInfo";
 
 const ActorDetailsPage = () => {
   const { id: actorId } = useParams();
@@ -14,17 +16,22 @@ const ActorDetailsPage = () => {
 
   return (
     <>
-      <h1>Actor Details</h1>
       <LoadError isLoading={isLoading} isError={isError} error={error} />
-      {data && <h2>{data.name}</h2>}
+      {data && (
+        <>
+          <ActorDetailsHeader
+            name={data.name}
+            img={data.profile_path}
+            //tagline={data.tagline}
+            //score={data.vote_average}
+          />
+          <ActorDetailsInfo actor={data} />
+        </>
+      )}
       {data && (
         <div>
           <ul>
-            {data.movie_credits.cast.slice(0, 9).map((mov) => (
-              <li key={mov.id}>
-                <Link to={`/movies/movie/${mov.id}`}>{mov.title}</Link>
-              </li>
-            ))}
+            
           </ul>
         </div>
       )}
