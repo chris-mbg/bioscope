@@ -1,14 +1,15 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import Table from "react-bootstrap/Table";
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
 import { Link } from "react-router-dom";
 import imgPrefixUrl from "../utilities/ImgPrefixUrl";
 import NoImage from "./NoImage";
 
 const ActorCard = ({ actor }) => {
   return (
-    <Card className="h-100 bg-light shadow">
-      <Link to={`/actors/actor/${actor.id}`}>
+    <Link to={`/actors/actor/${actor.id}`}>
+      <Card className="h-100 bg-light shadow">
         {actor.profile_path ? (
           <Card.Img
             className=""
@@ -22,17 +23,13 @@ const ActorCard = ({ actor }) => {
         <Card.Body>
           <Card.Title className="text-center">{actor.name}</Card.Title>
           <hr className="my-1" />
-          <Table className="m-0 table-borderless fs-6">
-            <tbody>
-              <tr>
-                <th>Character</th>
-                <td>{actor.character}</td>
-              </tr>
-            </tbody>
-          </Table>
+          <Row className="" xs={1} sm={2}>
+            <Col className="fw-bold">Character: </Col>
+            <Col>{actor.character}</Col>
+          </Row>
         </Card.Body>
-      </Link>
-    </Card>
+      </Card>
+    </Link>
   );
 };
 

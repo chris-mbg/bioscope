@@ -13,7 +13,7 @@ import TopRatedPage from "./pages/TopRatedPage";
 
 function App() {
   return (
-    <div className="pb-3">
+    <div className="pb-5">
       <Navigation />
       <Container className="App">
         <Switch>

@@ -5,7 +5,7 @@ import LoadError from "../components/LoadError";
 
 const PopularPage = () => {
 
-  const { data, isError, isLoading } = useQuery(['popular-us'], getPopular)
+  const { data, isError, error, isLoading } = useQuery(['popular-us'], getPopular)
 
   return (
     <div>

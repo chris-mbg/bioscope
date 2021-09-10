@@ -3,8 +3,9 @@ import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import { getMovieById } from "../services/TMDBAPI";
 import LoadError from "../components/LoadError";
-import MovieDetailsHeader from "../components/MovieDetailsHeader";
-import MovieDetailsInfo from "../components/MovieDetailsInfo";
+import MovieDetails from "../components/MovieDetails";
+import MoviesWrapper from "../components/MoviesWrapper";
+import ActorsWrapper from "../components/ActorsWrapper";
 
 const MovieDetailsPage = () => {
   const { id: movieId } = useParams();
@@ -20,13 +21,17 @@ const MovieDetailsPage = () => {
 
       {data && (
         <>
-          <MovieDetailsHeader
-            title={data.title}
-            img={data.backdrop_path}
-            tagline={data.tagline}
-            score={data.vote_average}
+          <MovieDetails movie={data} />
+
+          <h2 className="display-6 text-center">Cast</h2>
+          <ActorsWrapper
+            actors={data.credits?.cast
+              ?.filter((member) => member.known_for_department === "Acting")
+              .slice(0, 10)}
           />
-          <MovieDetailsInfo movie={data} />
+
+          <h3 className="display-5 text-center">Similar movies</h3>
+          <MoviesWrapper movies={data.similar.results.slice(0, 5)} />
         </>
       )}
     </>

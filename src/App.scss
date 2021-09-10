@@ -3,18 +3,28 @@
 
 body {
   font-family: "Glory";
-  color: #acacac;
+  color: #d3d3d3;
 }
 #root {
-  background: url('https://images.unsplash.com/photo-1502679726485-931beda67f88?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&w=1700&q=100');
+  // background: url('https://images.unsplash.com/photo-1502679726485-931beda67f88?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&w=1700&q=100');
   // background: url('https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3057&q=100');
+  background: url('https://images.unsplash.com/photo-1492446190781-58ac4285911d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1694&q=100');
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
 }
 
+h1 {
+  margin-bottom: 1rem;
+  color: #e7e7e7;
+}
+
 .logo-text {
   font-family: "Monoton";
+}
+
+.background-opacity-light {
+  background-color: rgba(211, 211, 211, 0.7);
 }
 
 a {

@@ -27,11 +27,11 @@ const ActorDetailsInfo = ({ actor }) => {
       </Table>
 
       <h3>Known for</h3>
-      <MoviesWrapper movies={actor.movie_credits.cast.slice(0, 9)} />
+      <MoviesWrapper movies={actor.movie_credits.cast.slice(0, 10)} />
     </>
   );
 
-  return movie ? renderContent() : null;
+  return actor ? renderContent() : null;
 };
 
 export default ActorDetailsInfo;

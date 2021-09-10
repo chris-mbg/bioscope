@@ -8,6 +8,7 @@ import { useUrlSearchParams } from "use-url-search-params";
 import MoviesWrapper from "../components/MoviesWrapper";
 import LoadError from "../components/LoadError";
 
+
 const GenrePage = () => {
   const { id: genreId } = useParams();
   const queryClient = useQueryClient();

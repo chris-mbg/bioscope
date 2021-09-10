@@ -5,7 +5,7 @@ import LoadError from "../components/LoadError";
 
 const NowPlayingPage = () => {
 
-  const { data, isError, isLoading } = useQuery(['now-playing-us'], getNowPlaying)
+  const { data, isError, error, isLoading } = useQuery(['now-playing-us'], getNowPlaying)
 
   return (
     <div>
