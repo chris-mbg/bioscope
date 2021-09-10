@@ -3,10 +3,10 @@ import { useQuery, useQueryClient } from "react-query";
 import { getMoviesForGenre } from "../services/TMDBAPI";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
-import Pagination from "../components/Pagination";
+import Pagination from "../components/utilities/Pagination";
 import { useUrlSearchParams } from "use-url-search-params";
-import MoviesWrapper from "../components/MoviesWrapper";
-import LoadError from "../components/LoadError";
+import MoviesWrapper from "../components/movies/MoviesWrapper";
+import LoadError from "../components/utilities/LoadError";
 
 
 const GenrePage = () => {

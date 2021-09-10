@@ -1,6 +1,6 @@
 import React from "react";
-import MoviesWrapper from "../components/MoviesWrapper";
-import ActorsWrapper from "../components/ActorsWrapper";
+import MoviesWrapper from "./MoviesWrapper";
+import ActorsWrapper from "../actors/ActorsWrapper";
 import MovieDetailsInfo from "./MovieDetailsInfo";
 
 const MovieDetails = ({ movie }) => {

@@ -2,8 +2,8 @@ import React from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import { getMovieById } from "../services/TMDBAPI";
-import LoadError from "../components/LoadError";
-import MovieDetails from "../components/MovieDetails";
+import LoadError from "../components/utilities/LoadError";
+import MovieDetails from "../components/movies/MovieDetails";
 
 
 const MovieDetailsPage = () => {

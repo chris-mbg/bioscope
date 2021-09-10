@@ -17,7 +17,9 @@ body {
   background-size: cover;
   min-height: 100vh;
 }
-
+h1, h2, h3 {
+  text-align: center;
+}
 h1 {
   margin-bottom: 1rem;
   color: #e7e7e7;
@@ -29,6 +31,7 @@ h1 {
   text-shadow: 1px 5px 20px var(--purple),
   3px 3px 5px #fff;
   font-size: 2rem;
+  text-align: left;
 }
 
 .background-opacity-light {

@@ -1,9 +1,10 @@
 import React from 'react';
 import { useQuery } from 'react-query'
-import { getPopular } from '../services/TMDBAPI'
-import LoadError from "../components/LoadError";
+import { getPopular } from '../../services/TMDBAPI'
+import MoviesWrapper from '../movies/MoviesWrapper';
+import LoadError from "../utilities/LoadError";
 
-const PopularPage = () => {
+const PopularMovies = () => {
 
   const { data, isError, error, isLoading } = useQuery(['popular-us'], getPopular)
 
@@ -11,9 +12,9 @@ const PopularPage = () => {
     <div>
       <h1>Most Popular Movies</h1>
       <LoadError isLoading={isLoading} isError={isError} error={error} />
-      {data && data.results.map(mov => (<p key={mov.id}>{mov.title}</p>))}
+      {data && <MoviesWrapper movies={data.results} />}
     </div>
   );
 }
 
-export default PopularPage;
+export default PopularMovies;

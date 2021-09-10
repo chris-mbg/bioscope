@@ -1,11 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import MoviesWrapper from "./MoviesWrapper";
-import imgPrefixUrl from "../utilities/ImgPrefixUrl";
+import MoviesWrapper from "../movies/MoviesWrapper";
+import imgPrefixUrl from "../../utilities/ImgPrefixUrl";
 import Table from "react-bootstrap/Table";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import NoImage from "./NoImage";
+import NoImage from "../utilities/NoImage";
 
 const ActorDetails = ({ actor }) => {
   const withImg = () => {

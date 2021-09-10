@@ -1,15 +1,15 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import { Route, Switch } from "react-router-dom";
-import Navigation from "./components/Navigation";
+import Navigation from "./components/utilities/Navigation";
 import ActorDetailsPage from "./pages/ActorDetailsPage";
 import GenreListPage from "./pages/GenreListPage";
 import GenrePage from "./pages/GenrePage";
 import HomePage from "./pages/HomePage";
 import MovieDetailsPage from "./pages/MovieDetailsPage";
-import NowPlayingPage from "./pages/NowPlayingPage";
-import PopularPage from "./pages/PopularPage";
-import TopRatedPage from "./pages/TopRatedPage";
+// import NowPlayingPage from "./pages/NowPlayingPage";
+// import PopularPage from "./pages/PopularPage";
+// import TopRatedPage from "./pages/TopRatedPage";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
             <HomePage />
           </Route>
 
-          <Route exact path="/movies/now-playing">
+          {/* <Route exact path="/movies/now-playing">
             <NowPlayingPage />
           </Route>
 
@@ -31,7 +31,7 @@ function App() {
 
           <Route exact path="/movies/top-rated">
             <TopRatedPage />
-          </Route>
+          </Route> */}
 
           <Route exact path="/movies/movie/:id">
             <MovieDetailsPage />

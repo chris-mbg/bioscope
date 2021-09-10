@@ -1,9 +1,10 @@
 import React from 'react';
 import { useQuery } from 'react-query'
-import { getNowPlaying } from '../services/TMDBAPI'
-import LoadError from "../components/LoadError";
+import { getNowPlaying } from '../../services/TMDBAPI'
+import LoadError from "../utilities/LoadError";
+import MoviesWrapper from '../movies/MoviesWrapper';
 
-const NowPlayingPage = () => {
+const NowPlaying = () => {
 
   const { data, isError, error, isLoading } = useQuery(['now-playing-us'], getNowPlaying)
 
@@ -11,9 +12,9 @@ const NowPlayingPage = () => {
     <div>
       <h1>Now Playing</h1>
       <LoadError isLoading={isLoading} isError={isError} error={error} />
-      {data && data.results.map(mov => (<p key={mov.id}>{mov.title}</p>))}
+      {data && <MoviesWrapper movies={data.results} />}
     </div>
   );
 }
 
-export default NowPlayingPage;
+export default NowPlaying;

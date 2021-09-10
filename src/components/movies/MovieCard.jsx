@@ -2,8 +2,8 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import Table from "react-bootstrap/Table";
 import { Link } from "react-router-dom";
-import imgPrefixUrl from "../utilities/ImgPrefixUrl";
-import NoImage from '../components/NoImage'
+import imgPrefixUrl from "../../utilities/ImgPrefixUrl";
+import NoImage from '../utilities/NoImage'
 
 const MovieCard = ({ movie }) => {
   const renderCard = () => (

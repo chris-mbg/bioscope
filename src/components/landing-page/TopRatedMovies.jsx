@@ -1,9 +1,10 @@
 import React from 'react';
 import { useQuery } from 'react-query'
-import { getTopRated } from '../services/TMDBAPI'
-import LoadError from "../components/LoadError";
+import { getTopRated } from '../../services/TMDBAPI'
+import LoadError from "../utilities/LoadError";
+import MoviesWrapper from '../movies/MoviesWrapper';
 
-const TopRatedPage = () => {
+const TopRatedMovies = () => {
 
   const { data, isError, error, isLoading } = useQuery(['top-rated-us'], getTopRated)
 
@@ -11,9 +12,9 @@ const TopRatedPage = () => {
     <div>
       <h1>Top Rated Movies</h1>
       <LoadError isLoading={isLoading} isError={isError} error={error} />
-      {data && data.results.map(mov => (<p key={mov.id}>{mov.title}</p>))}
+      {data && <MoviesWrapper movies={data.results} />}
     </div>
   );
 }
 
-export default TopRatedPage;
+export default TopRatedMovies;

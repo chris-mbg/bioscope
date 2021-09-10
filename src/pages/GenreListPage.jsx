@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import { getAllGenres } from "../services/TMDBAPI";
-import LoadError from "../components/LoadError";
+import LoadError from "../components/utilities/LoadError";
 
 const GenreListPage = () => {
   const { data, isError, error, isLoading } = useQuery(
