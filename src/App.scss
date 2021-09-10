@@ -23,7 +23,7 @@ h1, h2, h3 {
 h1 {
   margin-bottom: 1rem;
   color: #e7e7e7;
-  text-shadow: 10px 1px 10px var(--purple);
+  text-shadow: 1px 1px 10px var(--light), 1px 1px 5px var(--purple);
 }
 
 .logo-text {
@@ -33,7 +33,6 @@ h1 {
   font-size: 2rem;
   text-align: left;
 }
-
 .background-opacity-light {
   background-color: rgba(211, 211, 211, 0.7);
 }
@@ -41,6 +40,7 @@ h1 {
   background-color: rgba(29, 0, 36, 0.2);
   box-shadow: 0 0 4rem rgba(211, 211, 211, 0.3);
   color: var(--light);
+  border-radius: 1rem;
 }
 
 a {
@@ -51,4 +51,34 @@ a {
 
 a:hover {
   color: #dcdcdc;
+}
+
+/* ----- TABS ---------*/
+ul.nav-tabs > li.nav-item > button.nav-link {
+  // background-color: rgba(29, 0, 36, 0.2);
+  // box-shadow: 0 0 4rem rgba(211, 211, 211, 0.3);
+  color: var(--purple);
+  border: var(--purple);
+  border-radius: 1rem 1rem 0rem 0rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+ul.nav-tabs > li.nav-item {
+  width: 33%;
+  border: 1px solid var(--purple);
+  border-bottom: none;
+  border-radius: 1rem 1rem 0rem 0rem;
+  background-color: rgba(29, 0, 36, 0.2);
+  box-shadow: 0 0 4rem rgba(211, 211, 211, 0.3), 1px -1px 5px var(--purple);
+  color: var(--light);
+  text-align: center;
+  margin-bottom: -0.3rem;
+  z-index: 100;
+}
+
+ul.nav-tabs {
+  // width: 80%;
+  margin: 2rem auto 0 auto;
+  border: none;
 }

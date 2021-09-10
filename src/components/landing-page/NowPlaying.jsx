@@ -10,7 +10,7 @@ const NowPlaying = () => {
 
   return (
     <div>
-      <h1>Now Playing</h1>
+      <h1 className="my-4">Now Playing</h1>
       <LoadError isLoading={isLoading} isError={isError} error={error} />
       {data && <MoviesWrapper movies={data.results} />}
     </div>

@@ -10,6 +10,8 @@ const Navigation = () => {
         {/* <NavLink to="/movies/now-playing">Now Playing</NavLink>
         <NavLink to="/movies/popular">Most popular</NavLink>
         <NavLink to="/movies/top-rated">Top rated</NavLink> */}
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/movies/search">Search</NavLink>
         <NavLink to="/genres/all">Browse by Genre</NavLink>
       </div>
       <hr></hr>
