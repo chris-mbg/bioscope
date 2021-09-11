@@ -50,9 +50,9 @@ a {
   transition: all 0.2s ease;
 }
 
-// a:hover {
-//   color: inherit;
-// }
+a:hover {
+  color: var(--purple)
+}
 
 /*------ NAVBAR ------*/
 .navbar-container .nav a:hover {
@@ -106,4 +106,5 @@ ul.nav-tabs {
   filter: brightness(1.25);
   z-index: 10;
   border: none;
+  color: #333;
 }
