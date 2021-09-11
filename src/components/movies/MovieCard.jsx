@@ -7,14 +7,14 @@ import NoImage from '../utilities/NoImage'
 
 const MovieCard = ({ movie }) => {
   const renderCard = () => (
-    <Card className="h-100 bg-light shadow">
-      <Link to={`/movies/movie/${movie.id}`}>
-        {movie.backdrop_path ? (
-          <Card.Img variant="top" src={imgPrefixUrl + movie.backdrop_path} />
+    <Card className="h-100 card-hover overflow-hidden">
+      <Link to={`/movies/movie/${movie.id}`} className="h-100">
+        {movie.poster_path ? (
+          <Card.Img variant="top h-100" src={imgPrefixUrl + movie.poster_path} />
         ) : (
-          <NoImage type="movie" />
+          <NoImage type="movie" movie={movie} />
         )}
-        <Card.Body>
+        {/* <Card.Body>
           <Card.Title>{movie.title}</Card.Title>
           <hr className="my-1" />
           <Table className="m-0 table-borderless fs-6">
@@ -29,7 +29,7 @@ const MovieCard = ({ movie }) => {
               </tr>
             </tbody>
           </Table>
-        </Card.Body>
+        </Card.Body> */}
       </Link>
     </Card>
   );

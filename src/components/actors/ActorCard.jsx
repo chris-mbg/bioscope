@@ -8,8 +8,8 @@ import NoImage from "../utilities/NoImage";
 
 const ActorCard = ({ actor }) => {
   return (
-    <Link to={`/actors/actor/${actor.id}`}>
-      <Card className="h-100 bg-light shadow">
+    <Card className="h-100 background-opacity-dark card-hover">
+      <Link to={`/actors/actor/${actor.id}`}>
         {actor.profile_path ? (
           <Card.Img
             className=""
@@ -28,8 +28,8 @@ const ActorCard = ({ actor }) => {
             <Col>{actor.character}</Col>
           </Row>
         </Card.Body>
-      </Card>
-    </Link>
+      </Link>
+    </Card>
   );
 };
 

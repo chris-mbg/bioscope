@@ -20,7 +20,7 @@ const ListTabs = () => {
         <Tab eventKey="top-rated" title="Top Rated" className="background-opacity-dark pt-3 pb-4 px-1">
           <TopRatedMovies />
         </Tab>
-        <Tab eventKey="now-playing" title="Now Playing" className="background-opacity-dark pt-3 pb-4 px-1">
+        <Tab eventKey="now-playing" title="In Theaters now" className="background-opacity-dark pt-3 pb-4 px-1">
           <NowPlaying />
         </Tab>
       </Tabs>
