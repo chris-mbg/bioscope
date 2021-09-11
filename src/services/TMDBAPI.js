@@ -5,12 +5,12 @@
  *
  */
 import axios from "axios";
-import apiKey from '../utilities/APIKey'
+import apiKey from "../utilities/APIKey";
 
 axios.defaults.baseURL = "https://api.themoviedb.org/3";
 
 const get = async (endpoint, queryParams = null) => {
-  let queryString = "&adult=false";
+  let queryString = "&include_adult=false";
   if (queryParams) {
     Object.keys(queryParams).forEach((key) => {
       queryString += `&${key}=${queryParams[key]}`;
@@ -40,13 +40,18 @@ export const getAllGenres = async () => {
   return get("/genre/movie/list");
 };
 export const getMoviesForGenre = async (genreId, page) => {
-  return get('/discover/movie', { with_genres: genreId, page: page })
-}
+  return get("/discover/movie", { with_genres: genreId, page: page });
+};
+
+export const getMoviesBySearch = async (queryObj) => {
+  if(queryObj.query === '') { return }
+  return get("/search/movie", queryObj);
+};
 
 export const getMovieById = async (movieId) => {
-  return get(`/movie/${movieId}`, { append_to_response: 'credits,similar'})
-}
+  return get(`/movie/${movieId}`, { append_to_response: "credits,similar" });
+};
 
 export const getActorById = async (actorId) => {
-  return get(`/person/${actorId}`, { append_to_response: 'movie_credits'})
-}
+  return get(`/person/${actorId}`, { append_to_response: "movie_credits" });
+};

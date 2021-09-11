@@ -7,6 +7,7 @@ import GenreListPage from "./pages/GenreListPage";
 import GenrePage from "./pages/GenrePage";
 import HomePage from "./pages/HomePage";
 import MovieDetailsPage from "./pages/MovieDetailsPage";
+import SearchPage from "./pages/SearchPage";
 // import NowPlayingPage from "./pages/NowPlayingPage";
 // import PopularPage from "./pages/PopularPage";
 // import TopRatedPage from "./pages/TopRatedPage";
@@ -32,6 +33,10 @@ function App() {
           <Route exact path="/movies/top-rated">
             <TopRatedPage />
           </Route> */}
+
+          <Route exact path="/movies/search">
+            <SearchPage />
+          </Route>
 
           <Route exact path="/movies/movie/:id">
             <MovieDetailsPage />
