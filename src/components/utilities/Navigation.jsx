@@ -6,7 +6,7 @@ import { NavLink, Link } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <Container classname="navbar-container">
+    <Container className="navbar-container">
       <Row
         lg={2}
         className="justify-content-lg-between align-items-center py-2"

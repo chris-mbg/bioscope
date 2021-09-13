@@ -9,16 +9,16 @@ import GenrePage from "./pages/GenrePage";
 import HomePage from "./pages/HomePage";
 import MovieDetailsPage from "./pages/MovieDetailsPage";
 import SearchPage from "./pages/SearchPage";
-import ViewedContextProvider from "./contexts/ViewedContextProvider";
+
 // import NowPlayingPage from "./pages/NowPlayingPage";
 // import PopularPage from "./pages/PopularPage";
 // import TopRatedPage from "./pages/TopRatedPage";
 
 function App() {
   return (
-    <div className="">
+    <div id="App" className="position-relative">
       <Navigation />
-      <Container className="App">
+      <Container className="">
         <Switch>
           <Route exact path="/">
             <HomePage />
@@ -40,16 +40,12 @@ function App() {
             <SearchPage />
           </Route>
 
-          <ViewedContextProvider>
-            <Route exact path="/movies/movie/:id">
-              <MovieDetailsPage />
-            </Route>
-
-            <Footer />
-
-          </ViewedContextProvider>
+          <Route exact path="/movies/movie/:id">
+            <MovieDetailsPage />
+          </Route>
         </Switch>
       </Container>
+      <Footer />
     </div>
   );
 }

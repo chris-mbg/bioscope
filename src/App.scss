@@ -9,13 +9,14 @@ body {
   --purple: #8700c5;
   --light: #d3d3d3;
 }
-#root {
+#App{
   // background: url('https://images.unsplash.com/photo-1502679726485-931beda67f88?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&w=1700&q=100');
   // background: url('https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3057&q=100');
   background: url("https://images.unsplash.com/photo-1492446190781-58ac4285911d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1694&q=100");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
+  padding-bottom: 340px;
 }
 h1,
 h2,
@@ -100,6 +101,8 @@ ul.nav-tabs {
   // box-shadow: 1px 1px 5px var(--light);
   border-radius: 1rem;
   // color: #333;
+  //max-height: 30vh;
+  //max-width: 20vw;
 }
 .card-hover:hover {
   transform: scale(1.05);
@@ -107,4 +110,10 @@ ul.nav-tabs {
   z-index: 10;
   border: none;
   color: #333;
+}
+
+@media screen and (min-width: 576px) {
+  #App {
+    padding-bottom: 200px;
+  }
 }
