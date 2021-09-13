@@ -33,6 +33,14 @@ const SearchPage = () => {
     setSearchParams({ ...searchParams, page: page.page, query: searchStr });
   }, [page, searchStr]);
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, [page]);
+
   return (
     <>
       <h1>Search Page</h1>

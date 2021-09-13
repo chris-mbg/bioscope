@@ -6,14 +6,13 @@ import Col from "react-bootstrap/Col";
 
 const MovieDetailsInfo = ({ movie }) => {
   const withImg = () => (
-    <Col className="mb-3 mb-lg-0">
-      <div className="d-flex justify-content-center align-items-center position-relative">
-        <img
-          src={imgPrefixUrl + movie.backdrop_path}
-          alt={movie.title}
-          className="img-fluid rounded-3"
-        />
-      </div>
+    <Col className="mb-3 mb-lg-0 d-flex justify-content-center" lg={6}>
+      <img
+        src={imgPrefixUrl + movie.poster_path}
+        alt={movie.title}
+        className="rounded-3"
+        style={{ maxHeight: "400px" }}
+      />
     </Col>
   );
 
@@ -25,11 +24,11 @@ const MovieDetailsInfo = ({ movie }) => {
       )}
       <Row
         xs={1}
-        lg={movie.backdrop_path ? 2 : 1}
-        className="align-items-center mb-5 background-opacity-dark p-3"
+        lg={movie.poster_path ? 2 : 1}
+        className="align-items-center mb-5 p-3 p-md-5"
       >
-        {movie.backdrop_path ? withImg() : null}
-        <Col className="rounded-3 px-3 py-5">
+        {movie.poster_path && movie.backdrop_path ? withImg() : null}
+        <Col className="rounded-3 px-3 py-5 bg-dark opacity-75">
           <p>{movie.overview}</p>
           <Table borderless className="w-75 bg-transparent text-light">
             <tbody>

@@ -18,13 +18,14 @@ const Footer = () => {
       <Row>
         <Col
           xs={12}
-          sm={true}
+          sm={recentlyViewed.length ? true : 12}
           className="d-flex justify-content-evenly align-items-center flex-wrap mt-2 mt-sm-0"
         >
           <div>
             <p>Application data from: </p>
             <img
-              className="fluid h-50"
+              style={{ maxHeight: '70px'}}
+              className="fluid"
               src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
               alt=""
             />
@@ -35,9 +36,10 @@ const Footer = () => {
           id="recently-viewed"
           xs={{ span: 12, order: "first" }}
           sm={{ span: true, order: "last" }}
+          className="align-items-stretch"
         >
           {recentlyViewed.length > 0 && (
-            <div className="">
+            <div className="align-self-stretch">
               <h3>Recently viewed:</h3>
               <div className="d-flex justify-content-center flex-wrap">
                 {recentlyViewed.map((movie) => (
