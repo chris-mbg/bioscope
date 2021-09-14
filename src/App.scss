@@ -10,8 +10,6 @@ body {
   --light: #d3d3d3;
 }
 #App {
-  // background: url('https://images.unsplash.com/photo-1502679726485-931beda67f88?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&w=1700&q=100');
-  // background: url('https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3057&q=100');
   background: url("https://images.unsplash.com/photo-1492446190781-58ac4285911d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1694&q=100");
   background-repeat: no-repeat;
   background-size: cover;
@@ -59,12 +57,7 @@ a {
 a:hover {
   color: var(--purple);
 }
-#welcome-links {
-  // max-width: 90vw;
-}
-#welcome-links a {
-  // max-width: 90vw;
-}
+
 #welcome-links a:hover {
   background-color: rgba(29, 0, 36, 0);
   box-shadow: 0 0 4rem rgba(211, 211, 211, 0.6);
@@ -82,37 +75,7 @@ a:hover {
   color: var(--purple);
 }
 
-/* ----- TABS ---------*/
-ul.nav-tabs > li.nav-item > button.nav-link {
-  // background-color: rgba(29, 0, 36, 0.2);
-  // box-shadow: 0 0 4rem rgba(211, 211, 211, 0.3);
-  color: var(--light);
-  // font-weight: 600;
-  border: var(--purple);
-  border-radius: 1rem 1rem 0rem 0rem;
-  width: 100%;
-  padding: 1rem;
-  font-size: 1.2rem;
-  text-shadow: 1px 1px 10px var(--light);
-}
-ul.nav-tabs > li.nav-item {
-  width: 33%;
-  border: 1px solid var(--purple);
-  border-bottom: none;
-  border-radius: 1rem 1rem 0rem 0rem;
-  background-color: rgba(29, 0, 36, 0.2);
-  box-shadow: 0 0 4rem rgba(211, 211, 211, 0.3), 1px -1px 5px var(--purple);
-  color: var(--light);
-  text-align: center;
-  margin-bottom: -0.3rem;
-  z-index: 100;
-}
 
-ul.nav-tabs {
-  // width: 80%;
-  margin: 2rem auto 0 auto;
-  border: none;
-}
 
 /* -------- CARDS --------- */
 .card-hover {
@@ -132,13 +95,6 @@ ul.nav-tabs {
   border: none;
   color: #333;
 }
-
-// /*------------ MOVIE DETAILS PAGE --------*/
-// #movie-info-row {
-//   background-repeat: "no-repeat";
-//   background-size: "cover";
-//   background-position: "center";
-// }
 
 @media screen and (min-width: 576px) {
   #App {
