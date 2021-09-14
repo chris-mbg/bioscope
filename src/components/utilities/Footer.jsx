@@ -30,7 +30,7 @@ const Footer = () => {
               alt=""
             />
           </div>
-          <p> &copy; Bioscope </p>
+          <p> &copy; Bioscope 2021 </p>
         </Col>
         <Col
           id="recently-viewed"

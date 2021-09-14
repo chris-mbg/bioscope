@@ -1,12 +1,12 @@
 import React from 'react';
 import { useQuery } from 'react-query'
-import { getPopular } from '../../services/TMDBAPI'
+import { getTrending } from '../../services/TMDBAPI'
 import MoviesWrapper from '../movies/MoviesWrapper';
 import LoadError from "../utilities/LoadError";
 
 const PopularMovies = () => {
 
-  const { data, isError, error, isLoading } = useQuery(['popular-us'], getPopular)
+  const { data, isError, error, isLoading } = useQuery(['popular-us'], getTrending)
 
   return (
     <div>

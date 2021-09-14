@@ -29,8 +29,8 @@ const get = async (endpoint, queryParams = null) => {
 export const getNowPlaying = async () => {
   return get("/movie/now_playing", { region: "US" });
 };
-export const getPopular = async () => {
-  return get("/movie/popular", { region: "US" });
+export const getTrending = async (timeWindow = week) => {
+  return get(`trending/movie/${timeWindow}`, { region: "US" });
 };
 export const getTopRated = async () => {
   return get("/movie/top_rated", { region: "US" });

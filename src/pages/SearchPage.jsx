@@ -42,8 +42,8 @@ const SearchPage = () => {
   }, [page]);
 
   return (
-    <>
-      <h1>Search Page</h1>
+    <div className="mt-4">
+      <h1>Search for Movies</h1>
       <SearchForm onFormSubmit={handleSearchFormSubmit} />
       <LoadError isLoading={isLoading} isError={isError} error={error} />
       {data && data.results.length === 0 && (
@@ -67,7 +67,7 @@ const SearchPage = () => {
           />
         </div>
       )}
-    </>
+    </div>
   );
 };
 

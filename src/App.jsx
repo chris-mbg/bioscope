@@ -9,10 +9,9 @@ import GenrePage from "./pages/GenrePage";
 import HomePage from "./pages/HomePage";
 import MovieDetailsPage from "./pages/MovieDetailsPage";
 import SearchPage from "./pages/SearchPage";
-
-// import NowPlayingPage from "./pages/NowPlayingPage";
-// import PopularPage from "./pages/PopularPage";
-// import TopRatedPage from "./pages/TopRatedPage";
+import NowPlayingPage from "./pages/NowPlayingPage";
+import TrendingPage from "./pages/TrendingPage";
+import TopRatedPage from "./pages/TopRatedPage";
 
 function App() {
   return (
@@ -34,6 +33,18 @@ function App() {
 
           <Route exact path="/genres/genre/:id">
             <GenrePage />
+          </Route>
+
+          <Route exact path="/movies/now-playing">
+            <NowPlayingPage />
+          </Route>
+
+          <Route exact path="/movies/trending">
+            <TrendingPage />
+          </Route>
+
+          <Route exact path="/movies/top-rated">
+            <TopRatedPage />
           </Route>
 
           <Route exact path="/movies/search">

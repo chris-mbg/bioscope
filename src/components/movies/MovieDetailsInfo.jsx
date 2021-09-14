@@ -25,7 +25,7 @@ const MovieDetailsInfo = ({ movie }) => {
       <Row
         xs={1}
         lg={movie.poster_path ? 2 : 1}
-        className="align-items-center mb-5 p-3 p-md-5"
+        className="justify-content-center align-items-center mb-5 p-3 p-md-5"
       >
         {movie.poster_path && movie.backdrop_path ? withImg() : null}
         <Col className="rounded-3 px-3 py-5 bg-dark opacity-75">
