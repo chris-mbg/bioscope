@@ -16,7 +16,7 @@ const Navigation = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="text-center">
-          <Nav className="ms-auto text-light">
+          <Nav className="ms-auto text-light fs-5">
             <Nav.Link href="/movies/search">Search</Nav.Link>
             <Nav.Link href="/movies/trending">Trending</Nav.Link>
             <Nav.Link href="/movies/top-rated">Top Rated</Nav.Link>
