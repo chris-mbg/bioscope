@@ -10,11 +10,10 @@ import Pagination from "../components/utilities/Pagination";
 const SearchPage = () => {
   const [searchParams, setSearchParams] = useUrlSearchParams(
     { page: 1, query: "" },
-    { page: Number }
+    { query: String, page: Number }
   );
 
   const [page, setPage] = useState({ page: searchParams.page });
-  const [searchStr, setSearchStr] = useState(searchParams.query);
 
   const { data, error, isError, isLoading, isPreviousData } = useQuery(
     ["search", searchParams],
@@ -25,14 +24,13 @@ const SearchPage = () => {
   );
 
   const handleSearchFormSubmit = (searchInput) => {
-    setSearchStr(searchInput);
+    //Reseting page if new search is submitted
+    setPage({ page: 1})
+    setSearchParams({...searchParams, query: searchInput});
   };
 
   useEffect(() => {
-    setSearchParams({ ...searchParams, page: page.page, query: searchStr });
-  }, [page, searchStr]);
-
-  useEffect(() => {
+    setSearchParams({ ...searchParams, page: page.page});
     window.scrollTo({
       top: 0,
       left: 0,
@@ -51,7 +49,7 @@ const SearchPage = () => {
       {data && data.results.length === 0 && (
         <p className="mt-4 text-center fs-4">
           Sorry, found nothing that matched:{" "}
-          <span className="fs-3">{searchStr}</span>
+          <span className="fs-3">{searchParams.query}</span>
         </p>
       )}
 
@@ -59,7 +57,7 @@ const SearchPage = () => {
         <div className="mt-3">
           <h2 className="mb-4">
             Results for:
-            <span className="display-6"> {searchStr}</span>
+            <span className="display-6"> {searchParams.query}</span>
           </h2>
           <MoviesWrapper movies={data.results} />
           <Pagination

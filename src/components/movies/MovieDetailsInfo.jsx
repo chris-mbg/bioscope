@@ -11,11 +11,12 @@ const MovieDetailsInfo = ({ movie }) => {
         src={imgPrefixUrl + movie.poster_path}
         alt={movie.title}
         className="rounded-3"
-        style={{ maxHeight: "500px" }}
+        style={{ maxHeight: "500px", border: '3px outset var(--dark)' }}
       />
     </Col>
   );
 
+  // bg-dark opacity-75
   return (
     <Row
       xs={1}
@@ -28,7 +29,7 @@ const MovieDetailsInfo = ({ movie }) => {
         {movie.tagline && (
           <p className="text-center fs-4 mb-4">{movie.tagline}</p>
         )}
-        <Col className="rounded-3 px-3 py-5 bg-dark opacity-75">
+        <Col className="px-3 py-3 py-lg-5 background-opacity-dark background-opacity-gray">
           <p>{movie.overview}</p>
           <Table borderless className="w-75 bg-transparent text-light">
             <tbody>
@@ -60,7 +61,7 @@ const MovieDetailsInfo = ({ movie }) => {
               )}
               <tr>
                 <th>Score: </th>
-                <td>{Math.round(movie.vote_average)} / 10</td>
+                <td>{movie.vote_average} / 10</td>
               </tr>
             </tbody>
           </Table>

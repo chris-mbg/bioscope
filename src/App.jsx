@@ -8,14 +8,14 @@ import GenreListPage from "./pages/GenreListPage";
 import GenrePage from "./pages/GenrePage";
 import HomePage from "./pages/HomePage";
 import MovieDetailsPage from "./pages/MovieDetailsPage";
-import SearchPage from "./pages/SearchPage";
 import NowPlayingPage from "./pages/NowPlayingPage";
-import TrendingPage from "./pages/TrendingPage";
+import SearchPage from "./pages/SearchPage";
 import TopRatedPage from "./pages/TopRatedPage";
+import TrendingPage from "./pages/TrendingPage";
 
 function App() {
   return (
-    <div id="App" className="position-relative">
+    <div id="App">
       <Navigation />
       <Container className="">
         <Switch>

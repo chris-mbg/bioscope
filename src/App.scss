@@ -1,10 +1,17 @@
 @import "bootstrap/scss/bootstrap";
 @import url("https://fonts.googleapis.com/css2?family=Glory:wght@100;200;300;400;500;600;700&family=Monoton&display=swap");
 
+:root {
+  --purple: #8700c5;
+  --light: #d3d3d3;
+  --gray: #413b42;
+  --dark: #0c0011;
+}
+
 body {
   font-family: "Glory";
-  color: #d3d3d3;
-  background: #170030;
+  color: var(--light);
+  background: var(--dark);
   background: linear-gradient(
     320deg,
     rgb(12, 0, 17) 68%,
@@ -12,15 +19,9 @@ body {
     rgb(12, 0, 17) 95%
   );
 }
-:root {
-  --purple: #8700c5;
-  --light: #d3d3d3;
-}
 #App {
-  background: url("https://images.unsplash.com/photo-1492446190781-58ac4285911d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1694&q=100");
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 98vh;
+  position: relative;
+  min-height: 100vh;
   padding-bottom: 410px;
 }
 h1,
@@ -47,14 +48,16 @@ h1 {
 #logo-text:hover {
   filter: brightness(1.2);
 }
-.background-opacity-light {
-  background-color: rgba(211, 211, 211, 0.7);
-}
+
 .background-opacity-dark {
-  background-color: rgba(29, 0, 36, 0.2);
-  box-shadow: 0 0 4rem rgba(211, 211, 211, 0.3);
+  background-color: #0c001144;
+  box-shadow: 0 0 64px rgba(211, 211, 211, 0.3);
   color: var(--light);
-  border-radius: 1rem;
+  border-radius: 0.8rem;
+}
+.background-opacity-gray {
+  background-color: rgba(65, 59, 66, 0.35);
+  box-shadow: 1px 0px 3px rgba(211, 211, 211, 0.3);
 }
 
 a {
@@ -62,19 +65,16 @@ a {
   color: inherit;
   transition: all 0.2s ease;
 }
-
 a:hover {
-  color: var(--purple);
+  color: var(--gray);
 }
 
 #welcome-links a:hover {
   background-color: rgba(29, 0, 36, 0);
   box-shadow: 0 0 4rem rgba(211, 211, 211, 0.6);
-  color: inherit;
-  // transform: scale(1.02);
+  color: #fff;
 }
 #genre-names-links a div:hover {
-  // box-shadow: 0 0 4rem rgba(211, 211, 211, 0.6);
   color: var(--purple);
 }
 
@@ -88,12 +88,7 @@ a:hover {
 .card-hover {
   transition: all 0.4 ease;
   border: none;
-  // background-color: #333;
-  // box-shadow: 1px 1px 5px var(--light);
-  border-radius: 1rem;
-  // color: #333;
-  //max-height: 30vh;
-  //max-width: 20vw;
+  border-radius: 0.8rem;
 }
 .card-hover:hover {
   transform: scale(1.05);
