@@ -12,7 +12,7 @@ const Navigation = () => {
     <Navbar
       variant="dark"
       expand="md"
-      className="background-opacity-dark rounded-0 py-3"
+      className="background-opacity-dark rounded-0 py-3 mb-2 mb-lg-4"
     >
       <Container>
         <Navbar.Brand href="/" id="logo-text" className="logo-text display-3">

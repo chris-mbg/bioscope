@@ -11,23 +11,23 @@ const MovieDetailsInfo = ({ movie }) => {
         src={imgPrefixUrl + movie.poster_path}
         alt={movie.title}
         className="rounded-3"
-        style={{ maxHeight: "400px" }}
+        style={{ maxHeight: "500px" }}
       />
     </Col>
   );
 
   return (
-    <>
-      <h1 className="text-center display-1">{movie.title}</h1>
-      {movie.tagline && (
-        <p className="text-center fs-4 mb-4">{movie.tagline}</p>
-      )}
-      <Row
-        xs={1}
-        lg={movie.poster_path ? 2 : 1}
-        className="justify-content-center align-items-center mb-5 p-3 p-md-5"
-      >
-        {movie.poster_path && movie.backdrop_path ? withImg() : null}
+    <Row
+      xs={1}
+      lg={movie.poster_path ? 2 : 1}
+      className="justify-content-center align-items-center mb-5 p-3 p-md-5"
+    >
+      {movie.poster_path && movie.backdrop_path ? withImg() : null}
+      <Col>
+        <h1 className="text-center display-3">{movie.title}</h1>
+        {movie.tagline && (
+          <p className="text-center fs-4 mb-4">{movie.tagline}</p>
+        )}
         <Col className="rounded-3 px-3 py-5 bg-dark opacity-75">
           <p>{movie.overview}</p>
           <Table borderless className="w-75 bg-transparent text-light">
@@ -55,8 +55,15 @@ const MovieDetailsInfo = ({ movie }) => {
             </tbody>
           </Table>
         </Col>
-      </Row>
-    </>
+      </Col>
+      {/* <Row
+        xs={1}
+        lg={movie.poster_path ? 2 : 1}
+        className="justify-content-center align-items-center mb-5 p-3 p-md-5"
+      > */}
+
+      {/* </Row> */}
+    </Row>
   );
 };
 

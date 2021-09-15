@@ -7,6 +7,7 @@ import { useUrlSearchParams } from "use-url-search-params";
 import Form from "react-bootstrap/Form";
 
 const TrendingPage = () => {
+  // Variable to make it possible for user to choose time frame for the trending movies.
   const [timeWindow, setTimeWindow] = useUrlSearchParams({
     timeWindow: "week",
   });
@@ -27,7 +28,7 @@ const TrendingPage = () => {
         Trending {timeWindow.timeWindow === "week" ? "this Week" : "Today"}
       </h1>
 
-      <div className="text-end mb-3 fs-5">
+      <div className="text-end mb-3 fs-5 py-3">
         <span className="me-4">Show trending for:</span>
         <span className="me-4">
           <input

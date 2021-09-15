@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import MoviesWrapper from "../movies/MoviesWrapper";
 import imgPrefixUrl from "../../utilities/ImgPrefixUrl";
 import Table from "react-bootstrap/Table";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import NoImage from "../utilities/NoImage";
+import Button from "react-bootstrap/Button";
 
 const ActorDetails = ({ actor }) => {
+  // Variable to make it possible for user to see all movie appearances or selection of 10 movies. 10 is showed as default. 
+  const [seeAll, setSeeAll] = useState(false);
+
   const withImg = () => {
     return (
       <Col lg={{ span: 2, offset: 1 }} className="mb-3 mb-lg-0">
@@ -31,7 +35,7 @@ const ActorDetails = ({ actor }) => {
       <Row className="align-items-center my-5 g-3 p-3 rounded-3 background-opacity-dark">
         {actor.profile_path ? withImg() : null}
         <Col lg={actor.profile_path ? { span: 8, offset: 1 } : 12}>
-          <h1 className="text-center display-1">{actor.name}</h1>
+          <h1 className="text-center display-2">{actor.name}</h1>
           <div className="rounded p-3">
             <p>{actor.biography}</p>
             <Table borderless className="w-75 bg-transparent text-light">
@@ -57,7 +61,23 @@ const ActorDetails = ({ actor }) => {
       </Row>
 
       <h2 className="display-5 text-center">Known for</h2>
-      <MoviesWrapper movies={actor.movie_credits.cast.slice(0, 10)} />
+      <MoviesWrapper
+        movies={
+          seeAll
+            ? actor.movie_credits.cast
+            : actor.movie_credits.cast.slice(0, 10)
+        }
+      />
+      {actor.movie_credits.cast.length > 10 && (
+        <div className="text-end mt-2">
+          <Button
+            variant="light"
+            onClick={() => setSeeAll((prevState) => !prevState)}
+          >
+            {seeAll ? "See selection" : "See all movies"}
+          </Button>
+        </div>
+      )}
     </>
   );
 

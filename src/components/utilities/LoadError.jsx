@@ -1,6 +1,8 @@
 import React from 'react';
 import Alert from 'react-bootstrap/Alert'
 
+// Component to show error or loading message
+
 const LoadError = ({ isLoading, isError, error}) => {
   return (
     <>

@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-const SearchForm = ({ onFormSubmit }) => {
-  const [searchInput, setSearchInput] = useState("");
+const SearchForm = ({ onFormSubmit, initSearchInput }) => {
+  const [searchInput, setSearchInput] = useState(initSearchInput);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log("search submit", searchInput);
     onFormSubmit(searchInput);
   };
 

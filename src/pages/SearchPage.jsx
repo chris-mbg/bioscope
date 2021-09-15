@@ -44,14 +44,18 @@ const SearchPage = () => {
   return (
     <div className="mt-4">
       <h1>Search for Movies</h1>
-      <SearchForm onFormSubmit={handleSearchFormSubmit} />
+
+      <SearchForm onFormSubmit={handleSearchFormSubmit} initSearchInput={searchParams.query}/>
+
       <LoadError isLoading={isLoading} isError={isError} error={error} />
+
       {data && data.results.length === 0 && (
         <p className="mt-4 text-center fs-4">
           Sorry, found nothing that matched:{" "}
           <span className="fs-3">{searchStr}</span>
         </p>
       )}
+
       {data && data.results.length > 0 && (
         <div className="mt-3">
           <h2 className="mb-4">

@@ -17,8 +17,15 @@ const MovieDetailsPage = () => {
     () => getMovieById(movieId)
   );
 
-  useEffect(() => window.scrollTo(0,0), [])
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, [movieId]);
 
+  // Adds movie to the list of recently viewed movied, showed in the Footer comp.
   useEffect(() => {
     if (!data || error) { return }
     if(data)

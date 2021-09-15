@@ -6,13 +6,13 @@ import Table from "react-bootstrap/Table";
 
 const NoImage = ({ type, movie }) => {
   return type == 'actor' ? (
-    <div className="d-flex justify-content-center align-items-center bg-secondary mx-auto" style={{height: '180px', width: '70%'}}>
-      <p className="fs-5">Image missing</p>
+    <div className="d-flex justify-content-center align-items-center bg-secondary mx-auto rounded-3" style={{height: '180px', width: '70%'}}>
+      <p className="fs-5 text-center">Image missing</p>
     </div>
   ) : (
     <>
-    <div className="d-flex justify-content-center align-items-center bg-secondary mx-auto" style={{height: '200px', width: '80%'}}>
-      <p className="fs-5">Image missing</p>
+    <div className="d-flex justify-content-center align-items-start bg-secondary mx-auto rounded-3" style={{height: '200px', width: '80%'}}>
+      <p className="fs-6 text-center">{movie.title}</p>
     </div>
     <Card.Body>
           <Card.Title className="text-dark">{movie.title}</Card.Title>

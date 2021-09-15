@@ -8,8 +8,6 @@ import MovieCard from "../movies/MovieCard";
 const Footer = () => {
   const { recentlyViewed } = useViewedContext();
 
-  console.log("footer: ", recentlyViewed);
-
   return (
     <Container
       fluid
@@ -18,10 +16,12 @@ const Footer = () => {
       <Row>
         <Col
           xs={12}
-          sm={recentlyViewed.length ? true : 12}
+          sm={recentlyViewed.length ? 4 : 12}
+          md={recentlyViewed.length ? 3 : 12}
           className="d-flex justify-content-evenly align-items-center flex-wrap mt-2 mt-sm-0"
         >
           <div>
+            <p> &copy; Bioscope 2021 </p>
             <p>Application data from: </p>
             <img
               style={{ maxHeight: '70px'}}
@@ -30,13 +30,13 @@ const Footer = () => {
               alt=""
             />
           </div>
-          <p> &copy; Bioscope 2021 </p>
+
         </Col>
         <Col
           id="recently-viewed"
           xs={{ span: 12, order: "first" }}
           sm={{ span: true, order: "last" }}
-          className="align-items-stretch"
+          // className="align-items-stretch"
         >
           {recentlyViewed.length > 0 && (
             <div className="align-self-stretch">
@@ -46,7 +46,7 @@ const Footer = () => {
                   <div
                     key={movie.id}
                     className="overflow-hidden me-1"
-                    style={{ maxHeight: "70px", maxWidth: "50px" }}
+                    style={{ maxHeight: "100px", maxWidth: "66px" }}
                   >
                     <MovieCard movie={movie} />
                   </div>
