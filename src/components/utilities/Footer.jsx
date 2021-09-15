@@ -21,7 +21,7 @@ const Footer = () => {
           className="d-flex justify-content-evenly align-items-center flex-wrap mt-2 mt-sm-0"
         >
           <div>
-            <p> &copy; Bioscope 2021 </p>
+            <p className="monoton-font"> &copy; Bioscope 2021 </p>
             <p>Application data from: </p>
             <img
               style={{ maxHeight: '70px'}}

@@ -19,7 +19,7 @@ const GenreListPage = () => {
 
   return (
     <Container className="mt-4">
-      <h1>Genres</h1>
+      <h1 className="my-4">Genres</h1>
       <LoadError isLoading={isLoading} isError={isError} error={error} />
       {data && (
         <Row

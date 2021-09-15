@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { useQuery, useQueryClient } from "react-query";
+import React from "react";
+import { useQuery } from "react-query";
 import { getMoviesForGenre } from "../services/TMDBAPI";
 import { useParams } from "react-router";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Pagination from "../components/utilities/Pagination";
 import { useUrlSearchParams } from "use-url-search-params";
 import MoviesWrapper from "../components/movies/MoviesWrapper";
@@ -13,7 +13,6 @@ const GenrePage = () => {
 
   // From the GenreListPage the name of the genre is sent via the Link as state on the location object. The state is then used in the JSX to write out what genre the movies belongs to.
   const location = useLocation();
-  const queryClient = useQueryClient();
   const [page, setPage] = useUrlSearchParams({ page: 1 }, { page: Number });
 
   console.log(location);
@@ -26,7 +25,7 @@ const GenrePage = () => {
 
   return (
     <>
-      <h1 className="text-center">
+      <h1 className="my-4">
         {/* If a hard reload is made on the genre page, the genre name will no longer be specified due to that state on the location object is undefined */}
         Find {location.state?.genreName ?? ""} Movies
       </h1>

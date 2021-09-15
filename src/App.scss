@@ -15,7 +15,7 @@ body {
   background: url("https://images.unsplash.com/photo-1492446190781-58ac4285911d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1694&q=100");
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 100vh;
+  min-height: 98vh;
   padding-bottom: 410px;
 }
 h1,
@@ -28,7 +28,9 @@ h1 {
   color: #e7e7e7;
   text-shadow: 1px 1px 10px var(--light), 1px 1px 5px var(--purple);
 }
-
+.monoton-font {
+  font-family: 'Monoton';
+}
 #logo-text,
 .logo-text {
   font-family: "Monoton";

@@ -25,7 +25,6 @@ const SearchPage = () => {
   );
 
   const handleSearchFormSubmit = (searchInput) => {
-    console.log("Notified in parent component", searchInput);
     setSearchStr(searchInput);
   };
 

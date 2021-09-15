@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Welcome = () => {
   return (
     <>
-      <h1 className="display-6 text-center mt-3 my-2">Meet marvellous movies</h1>
+      <h1 className="monoton-font display-6 text-center mt-3 my-2">Meet Marvellous Movies</h1>
       <div
         id="welcome-links"
         className="d-flex flex-nowrap flex-column justify-content-between my-lg-4"
