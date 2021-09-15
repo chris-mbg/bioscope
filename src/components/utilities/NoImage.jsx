@@ -11,8 +11,9 @@ const NoImage = ({ type, movie }) => {
     </div>
   ) : (
     <>
-    <div className="d-flex justify-content-center align-items-start bg-secondary mx-auto rounded-3" style={{height: '200px', width: '80%'}}>
+    <div className="d-flex flex-column justify-content-around align-items-center bg-secondary mx-auto rounded-3" style={{height: '200px', width: '80%'}}>
       <p className="fs-6 text-center">{movie.title}</p>
+      <p className="fs-6 text-center">Image missing</p>
     </div>
     <Card.Body>
           <Card.Title className="text-dark">{movie.title}</Card.Title>

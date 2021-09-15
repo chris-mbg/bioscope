@@ -26,7 +26,7 @@ const get = async (endpoint, queryParams = null) => {
   const response = await axios.get(
     `${endpoint}?api_key=${apiKey}${queryString}`
     );
-
+  console.log('response', response)
   return response.data;
 };
 

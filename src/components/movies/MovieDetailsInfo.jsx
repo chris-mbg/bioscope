@@ -48,6 +48,16 @@ const MovieDetailsInfo = ({ movie }) => {
                 <th>Release date</th>
                 <td>{movie.release_date}</td>
               </tr>
+              {movie.production_countries.length > 0 && (
+                <tr>
+                  <th>Production countries</th>
+                  <td>
+                    {movie.production_countries.map((c, i) => (
+                      <span key={i}>{c.name}, </span>
+                    ))}
+                  </td>
+                </tr>
+              )}
               <tr>
                 <th>Score: </th>
                 <td>{Math.round(movie.vote_average)} / 10</td>
@@ -56,13 +66,6 @@ const MovieDetailsInfo = ({ movie }) => {
           </Table>
         </Col>
       </Col>
-      {/* <Row
-        xs={1}
-        lg={movie.poster_path ? 2 : 1}
-        className="justify-content-center align-items-center mb-5 p-3 p-md-5"
-      > */}
-
-      {/* </Row> */}
     </Row>
   );
 };
