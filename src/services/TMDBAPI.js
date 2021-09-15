@@ -25,34 +25,37 @@ const get = async (endpoint, queryParams = null) => {
 
   const response = await axios.get(
     `${endpoint}?api_key=${apiKey}${queryString}`
-  );
+    );
 
   return response.data;
 };
 
 /**
- * Get movies now playing in theaters for US region
+ * Get movies now playing in theaters for US region and the specified page
+ * @param {Number} page
  * @returns Promise
  */
-export const getNowPlaying = async () => {
-  return get("/movie/now_playing", { region: "US" });
+export const getNowPlaying = async (page) => {
+  return get("/movie/now_playing", { region: "US", page });
 };
 
 /**
  * Get trending movies in the US region for the given time window
  * @param {String} timeWindow
+ * @param {Number} page
  * @returns Promise
  */
-export const getTrending = async (timeWindow = week) => {
-  return get(`trending/movie/${timeWindow}`, { region: "US" });
+export const getTrending = async (timeWindow = 'week', page) => {
+  return get(`trending/movie/${timeWindow}`, { region: "US", page: page });
 };
 
 /**
- * Get the top rated movies for the US region
+ * Get the top rated movies for the US region for specified page
+ * @param {Number} page
  * @returns Promise
  */
-export const getTopRated = async () => {
-  return get("/movie/top_rated", { region: "US" });
+export const getTopRated = async (page) => {
+  return get("/movie/top_rated", { region: "US", page: page });
 };
 
 /**

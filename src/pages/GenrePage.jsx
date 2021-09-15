@@ -15,9 +15,7 @@ const GenrePage = () => {
   const location = useLocation();
   const [page, setPage] = useUrlSearchParams({ page: 1 }, { page: Number });
 
-  console.log(location);
-
-  const { data, isLoading, isError, error, isPreviosData } = useQuery(
+  const { data, isLoading, isError, error, isPreviousData } = useQuery(
     ["genre-movies", genreId, page],
     () => getMoviesForGenre(genreId, page.page),
     { keepPreviousData: true }
@@ -37,7 +35,7 @@ const GenrePage = () => {
       <Pagination
         page={page.page}
         setPage={setPage}
-        isPrevData={isPreviosData}
+        isPrevData={isPreviousData}
         hasMore={data?.total_pages > page.page}
       />
     </>

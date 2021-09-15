@@ -1,31 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useQuery } from "react-query";
+import { useUrlSearchParams } from "use-url-search-params";
 import { getTrending } from "../services/TMDBAPI";
 import LoadError from "../components/utilities/LoadError";
 import MoviesWrapper from "../components/movies/MoviesWrapper";
-import { useUrlSearchParams } from "use-url-search-params";
-import Form from "react-bootstrap/Form";
+import Pagination from "../components/utilities/Pagination";
 
 const TrendingPage = () => {
-  // Variable to make it possible for user to choose time frame for the trending movies shown.
-  const [timeWindow, setTimeWindow] = useUrlSearchParams({
-    timeWindow: "week",
-  });
+  // Query depends on both time window and page.
+  const [searchParams, setSearchParams] = useUrlSearchParams(
+    { timeWindow: "week", page: 1 },
+    { timeWindow: ["week", "day"], page: Number }
+  );
 
-  const { data, isError, error, isLoading } = useQuery(
-    ["trending-us", timeWindow],
-    () => getTrending(timeWindow.timeWindow)
+  const [page, setPage] = useState({ page: 1 });
+
+  const { data, isError, error, isLoading, isPreviousData } = useQuery(
+    ["trending-us", searchParams.timeWindow, searchParams.page],
+    () => getTrending(searchParams.timeWindow, searchParams.page),
+    { keepPreviousData: true }
   );
 
   const handleRadioChange = (e) => {
-    console.log(e.target.value);
-    setTimeWindow({ timeWindow: e.target.value });
+    // fired when user changes the time window for Trending. If time window is changed the page is 'reset' to 1.
+    setSearchParams({timeWindow: e.target.value, page: 1 })
   };
+
+  useEffect(() => {
+    setSearchParams({
+      ...searchParams,
+      page: page.page,
+    });
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, [page]);
 
   return (
     <div>
       <h1 className="my-4">
-        Trending {timeWindow.timeWindow === "week" ? "this Week" : "Today"}
+        Trending {searchParams.timeWindow === "week" ? "this Week" : "Today"}
       </h1>
 
       <div className="text-end mb-3 fs-5 py-3">
@@ -36,7 +52,7 @@ const TrendingPage = () => {
             type="radio"
             name="time-window"
             value="week"
-            checked={timeWindow.timeWindow === "week"}
+            checked={searchParams.timeWindow === "week"}
           />
           <label className="ms-2">this week</label>
         </span>
@@ -46,14 +62,24 @@ const TrendingPage = () => {
             type="radio"
             name="time-window"
             value="day"
-            checked={timeWindow.timeWindow === "day"}
+            checked={searchParams.timeWindow === "day"}
           />
           <label className="ms-2">today</label>
         </span>
       </div>
 
       <LoadError isLoading={isLoading} isError={isError} error={error} />
-      {data && <MoviesWrapper movies={data.results} />}
+      {data && (
+        <>
+          <MoviesWrapper movies={data.results} />
+          <Pagination
+            page={page.page}
+            setPage={setPage}
+            isPrevData={isPreviousData}
+            hasMore={data?.total_pages > page.page}
+          />
+        </>
+      )}
     </div>
   );
 };
