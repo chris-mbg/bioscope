@@ -5,9 +5,10 @@
  *
  */
 import axios from "axios";
-import apiKey from "../utilities/APIKey";
 
 axios.defaults.baseURL = "https://api.themoviedb.org/3";
+
+const apiKey = "ad4ffebe9c5cb2b228d5e1ab4c177669";
 
 /**
  *
