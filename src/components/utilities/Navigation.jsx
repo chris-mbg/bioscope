@@ -18,10 +18,10 @@ const Navigation = () => {
         <Navbar.Collapse id="basic-navbar-nav" className="text-center">
           <Nav className="ms-auto text-light">
             <Nav.Link href="/movies/search">Search</Nav.Link>
-            <Nav.Link href="/movies/top-rated">Top Rated</Nav.Link>
             <Nav.Link href="/movies/trending">Trending</Nav.Link>
+            <Nav.Link href="/movies/top-rated">Top Rated</Nav.Link>
             <Nav.Link href="/movies/now-playing">In Theaters Now</Nav.Link>
-            <Nav.Link href="/genres/all">Movies by Genre</Nav.Link>
+            <Nav.Link href="/genres/all">Genres</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
