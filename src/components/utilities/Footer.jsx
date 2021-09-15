@@ -12,7 +12,7 @@ const Footer = () => {
     <Container
       as="footer"
       fluid
-      className="bg-dark opacity-75 text-light p-1 p-lg-4 position-absolute bottom-0"
+      className="background-opacity-dark rounded-0 text-light p-1 p-lg-4 position-absolute bottom-0"
     >
       <Row>
         <Col
