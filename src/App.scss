@@ -10,6 +10,8 @@ body {
   --light: #d3d3d3;
 }
 #App {
+  background: #170030;
+  background: radial-gradient(230deg, #0c0011 0%, #8700c5 23%, #0c0011 70%);
   background: url("https://images.unsplash.com/photo-1492446190781-58ac4285911d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1694&q=100");
   background-repeat: no-repeat;
   background-size: cover;
@@ -74,8 +76,6 @@ a:hover {
   filter: brightness(1.2);
   color: var(--purple);
 }
-
-
 
 /* -------- CARDS --------- */
 .card-hover {

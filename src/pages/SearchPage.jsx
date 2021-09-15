@@ -42,7 +42,7 @@ const SearchPage = () => {
   }, [page]);
 
   return (
-    <div className="mt-4">
+    <div className="my-5 mt-lg-4">
       <h1>Search for Movies</h1>
 
       <SearchForm onFormSubmit={handleSearchFormSubmit} initSearchInput={searchParams.query}/>

@@ -1,17 +1,13 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import { NavLink, Link } from "react-router-dom";
 
 const Navigation = () => {
   return (
     <Navbar
       variant="dark"
-      expand="md"
+      expand="lg"
       className="background-opacity-dark rounded-0 py-3 mb-2 mb-lg-4"
     >
       <Container>
@@ -26,6 +22,18 @@ const Navigation = () => {
             <Nav.Link href="/movies/trending">Trending</Nav.Link>
             <Nav.Link href="/movies/now-playing">In Theaters Now</Nav.Link>
             <Nav.Link href="/genres/all">Movies by Genre</Nav.Link>
+            <p
+              className="nav-link"
+              onClick={() =>
+                window.scrollTo({
+                  left: 0,
+                  top: document.body.scrollHeight,
+                  behavior: "smooth",
+                })
+              }
+            >
+              Recently Viewed Movies
+            </p>
           </Nav>
         </Navbar.Collapse>
       </Container>
