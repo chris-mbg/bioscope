@@ -44,28 +44,30 @@ const TrendingPage = () => {
         Trending {searchParams.timeWindow === "week" ? "this Week" : "Today"}
       </h1>
 
-      <div className="text-end mb-3 fs-5 py-3">
-        <span className="me-4">Show trending for:</span>
-        <span className="me-4">
-          <input
-            onChange={handleRadioChange}
-            type="radio"
-            name="time-window"
-            value="week"
-            checked={searchParams.timeWindow === "week"}
-          />
-          <label className="ms-2">this week</label>
-        </span>
-        <span>
-          <input
-            onChange={handleRadioChange}
-            type="radio"
-            name="time-window"
-            value="day"
-            checked={searchParams.timeWindow === "day"}
-          />
-          <label className="ms-2">today</label>
-        </span>
+      <div className="mb-4 fs-5 d-flex justify-content-end align-items-center">
+        <span className="me-4">Trending:</span>
+        <div className="d-flex flex-column">
+          <span>
+            <input
+              onChange={handleRadioChange}
+              type="radio"
+              name="time-window"
+              value="day"
+              checked={searchParams.timeWindow === "day"}
+            />
+            <label className="ms-2">today</label>
+          </span>
+          <span className="me-4">
+            <input
+              onChange={handleRadioChange}
+              type="radio"
+              name="time-window"
+              value="week"
+              checked={searchParams.timeWindow === "week"}
+            />
+            <label className="ms-2">this week</label>
+          </span>
+        </div>
       </div>
 
       <LoadError isLoading={isLoading} isError={isError} error={error} />

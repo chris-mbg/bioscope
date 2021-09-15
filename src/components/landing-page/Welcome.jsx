@@ -12,16 +12,16 @@ const Welcome = () => {
         <Link
           as="div"
           className="background-opacity-dark w-75 mx-auto fs-3 py-1 py-md-2 py-lg-3 text-center d-flex justify-content-center align-items-center my-1 my-lg-3"
-          to="/movies/top-rated"
+          to="/movies/trending"
         >
-          Top Rated
+          Trending
         </Link>
         <Link
           as="div"
           className="background-opacity-dark w-75 mx-auto fs-3 py-1 py-md-2 py-lg-3 text-center d-flex justify-content-center align-items-center my-1 my-lg-3"
-          to="/movies/trending"
+          to="/movies/top-rated"
         >
-          Trending
+          Top Rated
         </Link>
         <Link
           as="div"
