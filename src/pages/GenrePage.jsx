@@ -3,8 +3,12 @@ import { useQuery } from "react-query";
 import { getMoviesForGenre } from "../services/TMDBAPI";
 import { useParams } from "react-router";
 import { useLocation } from "react-router-dom";
+import {
+  useQueryParam,
+  NumberParam,
+  withDefault,
+} from "use-query-params";
 import Pagination from "../components/utilities/Pagination";
-import { useUrlSearchParams } from "use-url-search-params";
 import MoviesWrapper from "../components/movies/MoviesWrapper";
 import LoadError from "../components/utilities/LoadError";
 
@@ -13,7 +17,8 @@ const GenrePage = () => {
 
   // From the GenreListPage the name of the genre is sent via the Link as state on the location object. The state is then used in the JSX to write out what genre the movies belongs to.
   const location = useLocation();
-  const [page, setPage] = useUrlSearchParams({ page: 1 }, { page: Number });
+
+  const [page, setPage] = useQueryParam('page', withDefault(NumberParam, 1));
 
   const { data, isLoading, isError, error, isPreviousData } = useQuery(
     ["genre-movies", genreId, page],
@@ -33,10 +38,10 @@ const GenrePage = () => {
       <MoviesWrapper movies={data?.results} />
 
       <Pagination
-        page={page.page}
+        page={page}
         setPage={setPage}
         isPrevData={isPreviousData}
-        hasMore={data?.total_pages > page.page}
+        hasMore={data?.total_pages > page}
       />
     </>
   );

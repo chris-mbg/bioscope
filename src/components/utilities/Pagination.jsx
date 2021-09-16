@@ -10,7 +10,7 @@ const Pagination = ({ page, setPage, isPrevData, hasMore }) => {
         <Button
           variant="secondary"
           disabled={isPrevData || page === 1}
-          onClick={() => setPage({ page: Math.max(page - 1, 1) })}
+          onClick={() => setPage(Math.max(page - 1, 1))}
         >
           &laquo; Previous
         </Button>
@@ -22,7 +22,7 @@ const Pagination = ({ page, setPage, isPrevData, hasMore }) => {
           disabled={isPrevData || !hasMore}
           onClick={() => {
             if (!isPrevData && hasMore) {
-              setPage({ page: page + 1 });
+              setPage(page + 1 );
             }
           }}
         >

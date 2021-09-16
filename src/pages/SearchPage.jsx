@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
-import { useUrlSearchParams } from "use-url-search-params";
+import {
+  useQueryParam,
+  NumberParam,
+  withDefault,
+  StringParam,
+} from "use-query-params";
 import MoviesWrapper from "../components/movies/MoviesWrapper";
 import SearchForm from "../components/search/SearchForm";
 import LoadError from "../components/utilities/LoadError";
@@ -8,33 +13,31 @@ import { getMoviesBySearch } from "../services/TMDBAPI";
 import Pagination from "../components/utilities/Pagination";
 
 const SearchPage = () => {
-  const [searchParams, setSearchParams] = useUrlSearchParams(
-    { page: 1, query: "" },
-    { query: String, page: Number }
+  const [page, setPage] = useQueryParam("page", withDefault(NumberParam, 1));
+  const [query, setQuery] = useQueryParam(
+    "query",
+    withDefault(StringParam, "")
   );
 
-  const [page, setPage] = useState({ page: searchParams.page });
-
   const { data, error, isError, isLoading, isPreviousData } = useQuery(
-    ["search", searchParams],
-    () => getMoviesBySearch(searchParams),
+    ["search", query, page],
+    () => getMoviesBySearch({ query, page }),
     {
       keepPreviousData: true,
     }
   );
 
   const handleSearchFormSubmit = (searchInput) => {
+    setQuery(searchInput)
     //Reseting page if new search is submitted
-    setPage({ page: 1})
-    setSearchParams({...searchParams, query: searchInput});
+    setPage(1);
   };
 
   useEffect(() => {
-    setSearchParams({ ...searchParams, page: page.page});
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   }, [page]);
 
@@ -42,14 +45,17 @@ const SearchPage = () => {
     <div className="my-5 mt-lg-4">
       <h1>Search for Movies</h1>
 
-      <SearchForm onFormSubmit={handleSearchFormSubmit} initSearchInput={searchParams.query}/>
+      <SearchForm
+        onFormSubmit={handleSearchFormSubmit}
+        initSearchInput={query}
+      />
 
       <LoadError isLoading={isLoading} isError={isError} error={error} />
 
       {data && data.results.length === 0 && (
         <p className="mt-4 text-center fs-4">
           Sorry, found nothing that matched:{" "}
-          <span className="fs-3">{searchParams.query}</span>
+          <span className="fs-3">{query}</span>
         </p>
       )}
 
@@ -57,14 +63,16 @@ const SearchPage = () => {
         <div className="mt-3">
           <h2 className="mb-4">
             Results for:
-            <span className="display-6"> {searchParams.query}</span>
+            <span className="display-6"> {query}</span>
           </h2>
+
           <MoviesWrapper movies={data.results} />
+
           <Pagination
-            page={page.page}
+            page={page}
             setPage={setPage}
             isPrevData={isPreviousData}
-            hasMore={data?.total_pages > page.page}
+            hasMore={data?.total_pages > page}
           />
         </div>
       )}
