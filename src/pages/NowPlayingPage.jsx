@@ -3,15 +3,18 @@ import { useQuery } from "react-query";
 import { getNowPlaying } from "../services/TMDBAPI";
 import LoadError from "../components/utilities/LoadError";
 import MoviesWrapper from "../components/movies/MoviesWrapper";
-import { useUrlSearchParams } from "use-url-search-params";
 import Pagination from "../components/utilities/Pagination";
+import { useQueryParam, NumberParam, useQueryParams, withDefault } from "use-query-params";
 
 const NowPlayingPage = () => {
-  const [page, setPage] = useUrlSearchParams({ page: 1 }, { page: Number });
+
+  const [page, setPage] = useQueryParam('page', withDefault(NumberParam, 1))
+
+  console.log('page:' ,page)
 
   const { data, isError, error, isLoading, isPreviousData } = useQuery(
     ["now-playing-us", page],
-    () => getNowPlaying(page.page),
+    () => getNowPlaying(page),
     { keepPreviousData: true }
   );
 
@@ -31,10 +34,10 @@ const NowPlayingPage = () => {
         <>
           <MoviesWrapper movies={data.results} />
           <Pagination
-            page={page.page}
+            page={page}
             setPage={setPage}
             isPrevData={isPreviousData}
-            hasMore={data?.total_pages > page.page}
+            hasMore={data?.total_pages > page}
           />
         </>
       )}
