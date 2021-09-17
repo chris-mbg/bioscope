@@ -8,6 +8,7 @@ import GenreListPage from "./pages/GenreListPage";
 import GenrePage from "./pages/GenrePage";
 import HomePage from "./pages/HomePage";
 import MovieDetailsPage from "./pages/MovieDetailsPage";
+import NotFoundPage from "./pages/NotFoundPage";
 import NowPlayingPage from "./pages/NowPlayingPage";
 import SearchPage from "./pages/SearchPage";
 import TopRatedPage from "./pages/TopRatedPage";
@@ -54,6 +55,11 @@ function App() {
           <Route exact path="/movies/movie/:id">
             <MovieDetailsPage />
           </Route>
+
+          <Route>
+            <NotFoundPage />
+          </Route>
+
         </Switch>
       </Container>
       <Footer />
