@@ -1,6 +1,7 @@
 {
   "name": "bioscope",
   "version": "0.0.0",
+  "homepage": "https://christinakodar.se/bioscope/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
