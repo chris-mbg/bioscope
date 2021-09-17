@@ -22,7 +22,7 @@ ReactDOM.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <ViewedContextProvider>
-        <BrowserRouter>
+        <BrowserRouter basename={'/bioscope'}>
           <QueryParamProvider ReactRouterRoute={Route}>
             <App />
           </QueryParamProvider>
