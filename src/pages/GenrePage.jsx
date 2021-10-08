@@ -22,7 +22,7 @@ const GenrePage = () => {
 
   const { data, isLoading, isError, error, isPreviousData } = useQuery(
     ["genre-movies", genreId, page],
-    () => getMoviesForGenre(genreId, page.page),
+    () => getMoviesForGenre(genreId, page),
     { keepPreviousData: true }
   );
 
