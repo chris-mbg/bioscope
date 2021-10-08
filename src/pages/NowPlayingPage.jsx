@@ -10,8 +10,6 @@ const NowPlayingPage = () => {
 
   const [page, setPage] = useQueryParam('page', withDefault(NumberParam, 1))
 
-  console.log('page:' ,page)
-
   const { data, isError, error, isLoading, isPreviousData } = useQuery(
     ["now-playing-us", page],
     () => getNowPlaying(page),

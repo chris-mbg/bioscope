@@ -20,8 +20,6 @@ const ViewedContextProvider = (props) => {
     }
   }
 
-  useEffect(() => console.log('Change to recentlyViewed: ', recentlyViewed))
-
   const values = {
     recentlyViewed,
     addMovieToList
