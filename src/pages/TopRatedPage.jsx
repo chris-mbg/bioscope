@@ -3,16 +3,16 @@ import { useQuery } from 'react-query'
 import { getTopRated } from '../services/TMDBAPI'
 import LoadError from "../components/utilities/LoadError";
 import MoviesWrapper from "../components/movies/MoviesWrapper";
-import { useUrlSearchParams } from "use-url-search-params";
+import { useQueryParam, NumberParam, withDefault, } from 'use-query-params';
 import Pagination from "../components/utilities/Pagination";
 
 const TopRatedPage = () => {
 
-  const [page, setPage] = useUrlSearchParams({ page: 1 }, { page: Number });
+  const [page, setPage] = useQueryParam("page", withDefault(NumberParam, 1));
 
   const { data, isError, error, isLoading, isPreviousData } = useQuery(
     ["top-rated-us", page],
-    () => getTopRated(page.page),
+    () => getTopRated(page),
     { keepPreviousData: true }
   );
 
